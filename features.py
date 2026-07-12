@@ -1,12 +1,3 @@
-"""
-features.py
-------------
-Shared technical-indicator feature engineering.
-Used by BOTH train_model.py (to build the training set) and app.py
-(to build the feature row for the live prediction), so training and
-inference always see identically-computed features.
-"""
-
 import numpy as np
 import pandas as pd
 
