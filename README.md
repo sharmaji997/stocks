@@ -5,9 +5,7 @@ for any stock ticker, using real historical price data (via **yfinance**),
 technical-indicator feature engineering, a **scikit-learn Random Forest
 Classifier**, and a **Streamlit** UI with interactive Plotly charts.
 
-Built with the same tech stack as the reference
-[car-price-prediction](https://github.com/sharmaji997/car-price-prediction)
-project (Python + pandas/numpy + scikit-learn RandomForest + Streamlit),
+Built with the  tech stack (Python + pandas/numpy + scikit-learn RandomForest + Streamlit),
 adapted from price *regression* to Buy/Hold/Sell *classification*.
 
 ![status](https://img.shields.io/badge/status-active-brightgreen)
@@ -75,49 +73,7 @@ we look `HORIZON_DAYS` (default 5) days into the future:
    - **Model Insights tab** — test accuracy, classification report,
      confusion matrix, and a feature-importance chart.
 
-## 🚀 Run Locally
 
-```bash
-# 1. Set up
-python -m venv venv
-source venv/bin/activate      # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-
-# 2. Train the model (downloads data — needs internet access)
-python train_model.py
-
-# 3. Launch the app
-streamlit run app.py
-```
-
-The app opens at `http://localhost:8501`.
-
-## ☁️ Deploy to Streamlit Community Cloud
-
-1. Push this repo to GitHub.
-2. Go to [share.streamlit.io](https://share.streamlit.io) and sign in.
-3. Click **"New app"**, pick the repo/branch, set main file to `app.py`.
-4. Add a step (or GitHub Action) to run `train_model.py` before deploy,
-   or commit the `model/*.pkl` files directly (they're small, well
-   under GitHub's file-size limits — no Git LFS needed).
-
-## 📌 Notes for Your Class Presentation
-
-- Explain *why* ratios/normalized indicators (e.g. `close/SMA - 1`)
-  are used instead of raw prices — it lets one model work across
-  stocks with wildly different price levels (e.g. a ₹200 stock vs a
-  ₹4,000 stock).
-- You can genuinely discuss the labeling design choice: it's a
-  **classification** problem (Buy/Hold/Sell) built on top of a
-  **regression** quantity (forward return), thresholded into classes —
-  good material for a Q&A.
-- Easy extensions for extra credit: try `GradientBoostingClassifier` or
-  `XGBoost`, tune the Buy/Sell thresholds or horizon in `config.py`,
-  add more indicators (e.g. ATR, OBV), or add a backtest that shows
-  cumulative returns if you'd followed the model's signals historically.
-- **Disclaimer to include in your presentation**: this is a supervised
-  learning project on historical patterns, not investment advice —
-  markets are influenced by far more than technical indicators.
 
 ## 🛠️ Tech Stack
 
@@ -127,7 +83,3 @@ The app opens at `http://localhost:8501`.
 - **pandas / numpy** — data handling & feature engineering
 - **Streamlit** — web UI
 - **Plotly** — interactive candlestick/indicator charts
-
-## 📄 License
-
-MIT — feel free to use this for your coursework.
