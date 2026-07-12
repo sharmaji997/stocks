@@ -13,10 +13,7 @@ from plotly.subplots import make_subplots
 from config import WATCHLIST
 from features import FEATURE_COLUMNS, LABEL_NAMES, add_technical_indicators
 
-# Yahoo Finance sometimes blocks/rate-limits requests coming from shared
-# cloud IP ranges (like Streamlit Community Cloud) and returns an empty,
-# non-JSON response instead of data. Sending a normal browser User-Agent
-# instead of yfinance's bare default reduces how often that happens.
+
 _YF_SESSION = requests.Session()
 _YF_SESSION.headers.update({
     "User-Agent": (
@@ -187,9 +184,7 @@ _TWELVEDATA_OUTPUTSIZE = {"6mo": 130, "1y": 260, "2y": 520, "5y": 1300}
 
 
 def _twelvedata_api_key():
-    # Set this in Streamlit Cloud under App settings -> Secrets, as:
-    #   TWELVEDATA_API_KEY = "your-key-here"
-    # (Get a free key at https://twelvedata.com -- no credit card needed.)
+    
     try:
         return st.secrets["TWELVEDATA_API_KEY"]
     except Exception:
