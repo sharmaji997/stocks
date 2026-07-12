@@ -1,15 +1,3 @@
-"""
-config.py
----------
-Central place to edit the stock universe. TRAIN_TICKERS is the set of
-symbols used to build the training dataset (more tickers + more history
-= a more robust model). WATCHLIST is what the app scans by default in
-"Suggestions" mode. Edit both freely for your class demo.
-
-Works with any yfinance-supported symbol. Indian NSE stocks need a
-".NS" suffix (e.g. "RELIANCE.NS", "TCS.NS").
-"""
-
 TRAIN_TICKERS = [
     # US large-caps
     "AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA", "JPM",
