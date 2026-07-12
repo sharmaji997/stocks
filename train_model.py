@@ -1,24 +1,3 @@
-"""
-train_model.py
----------------
-Downloads historical OHLCV data for a basket of stocks (config.TRAIN_TICKERS),
-engineers technical-indicator features (features.py), labels each row
-Buy/Hold/Sell based on the actual forward return, and trains a
-RandomForestClassifier -- the same modelling approach (scikit-learn +
-Random Forest) as the reference car-price project, just a Classifier
-here instead of a Regressor since we're predicting a category
-(Buy/Hold/Sell) instead of a number.
-
-Run this once before launching the Streamlit app:
-    python train_model.py
-
-Saves to model/:
-    signal_model.pkl     trained RandomForestClassifier
-    scaler.pkl            StandardScaler fit on the training features
-    feature_columns.pkl   exact ordered feature list the model expects
-    metrics.pkl            accuracy / classification report / confusion matrix
-"""
-
 import pickle
 from pathlib import Path
 
