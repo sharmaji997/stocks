@@ -1,19 +1,3 @@
-"""
-app.py
-------
-Streamlit UI for the Stock Buy/Sell/Hold predictor.
-
-Layout is a sidebar-driven "trading terminal" style dashboard (custom CSS
-theme + HTML card components) rather than the plain top-tabs layout, with
-three pages reachable from the sidebar:
-  1. Stock Analysis        - candlestick chart + indicators + prediction
-  2. Watchlist Suggestions - scans a list of stocks and ranks them
-  3. Model Insights         - accuracy, confusion matrix, feature importances
-
-Run with:
-    streamlit run app.py
-"""
-
 import io
 import os
 import pickle
